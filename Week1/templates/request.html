@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>"Request Values"</title>
+</head>
+<body>
+    <h1>Values from the Request Object</h1>
+    <p>Request Method: {{ method }}</p>
+    <p>Request URL: {{ url }}</p>
+    <p>Request Path: {{ path }}</p>
+    <p>Request Environ: {{ environ }}</p>
+
+    <p>Request Headers:</p>
+    <img src="">
+    <ul>
+        {% for key, value in headers.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Return to app values</a>
+</body>
+</html>

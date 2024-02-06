@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Sign-Up{% endblock %}
+
+{% block content %}
+<!-- Custom styles for dark theme -->
+<style>
+    body {
+        background-color: #343a43; /* Dark background */
+        color: #fff; /* Light text color */
+    }
+    .form-control {
+        background-color: #495057; /* Darker form fields */
+        color: #fff; /* Light text color */
+        border: 1px solid #6c757d;
+    }
+    .form-control::placeholder {
+        color: #adb5bd; /* Light placeholder text */
+    }
+    label {
+        color: #fff; /* Light label color */
+    }
+</style>
+
+<form method="POST" class="container mt-4">
+    <h3 class="text-center">Sign Up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <div class="row">
+            <div class="col-3">
+                <select class="form-control" id="countryCode" name="countryCode">
+                    <option value="+1">USA (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+33">FRA (+33)</option>
+                    <option value="+34">SPA (+34)</option>
+                    <option value="+39">ITA (+39)</option>
+                    <option value="+7">RUS (+7)</option>
+                    <option value="+20">EGY (+20)</option>
+                    <option value="+27">SAF (+27)</option>
+                    <option value="+30">GRE (+30)</option>
+                    <option value="+31">NED (+31)</option>
+                    <option value="+32">BEL (+32)</option>
+                    <option value="+40">ROM (+40)</option>
+                    <option value="+41">SWI (+41)</option>
+                    <!-- Add other country codes as needed -->
+                </select>
+            </div>
+            <div class="col-9">
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Create Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="password1">Enter Password</label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

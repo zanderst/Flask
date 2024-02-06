@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Abbreviations home page</h1>
+<h2>Top 10 list</h2>
+     <ul>
+     {% for abb in abbreviations %}
+         <li>{{ abb[0] }} - {{ abb[1] }}</li>
+     {% endfor %}
+     </ul>
+
+
+{% endblock %}
+```

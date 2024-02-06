@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{%block title%}Notes Home{% endblock %}
+{%block content%}
+
+<style>
+    body {
+        background-color: #343a43; /* Dark background */
+        color: #fff; /* Light text color */
+    }
+    .form-control {
+        background-color: #495057; /* Darker form fields */
+        color: #fff; /* Light text color */
+        border: 1px solid #6c757d;
+    }
+    .form-control::placeholder {
+        color: #adb5bd; /* Light placeholder text */
+    }
+    label {
+        color: #fff; /* Light label color */
+    }
+</style>
+
+<h1 align="center" style="font-size: 20px; color: lightblue;" >Enter your note here</h1>
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group_item">{{ note.data }}
+        <button type="button" style="color: red" class="close" onclick="deleteNote({{ note.id }})" aria-label="Open">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+
+</ul>
+<form method="POST">
+
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add note</button>
+    </div>
+<script>
+
+</script>
+
+    
+</form>
+{%endblock%}
